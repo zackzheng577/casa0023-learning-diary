@@ -1,0 +1,17 @@
+# Week 1 — Getting Started with Remote Sensing
+
+## Summary
+
+This week taught the basic principles of optical remote sensing with a hands-on exercise on a Sentinel-2 image using SNAP. Instead of taking satellite images as mere photographs, the practical aimed to learn how Earth surface features can interact with electromagnetic radiation at different wavelengths. And by visualising discrete spectral bands (e.g. red and near-infrared) and combining them into true and false colour composites, you can easily see that the spectral effects vary by type of land cover.
+
+One thing I found to be very helpful in the whole practical was exploring histograms and scatter plots to examine pixel value distributions. Adjusting contrast through histogram stretching demonstrated how visual interpretation depends heavily on display choices rather than changes to the underlying data. Scatter plots of red versus near-infrared bands illustrated the concept of spectral feature space, where vegetation, water and built-up areas occupy different regions. This provided an important conceptual foundation for understanding how later techniques such as classification and spectral indices operate.
+
+## Applications
+
+Some commonly used multispectral optical remote sensing data, such as Sentinel-2 in environmental and urban data, are mostly designed to balance spatial resolution, spectral coverage and temporal frequency. Deep integration between red absorption and near-infrared reflectance in vegetation observation has been widely applied in evaluating plant health, biomass and seasonal dynamics in vegetation monitoring. This concept has become the basis of several commonly used indices and land cover classification methods both for ecological and agricultural research.
+
+False colour composites and spectral feature space analysis have also been used in urban domains to profile impervious surfaces and green infrastructure and water bodies, contributing to research on urban expansion, environmental inequality and climate adaptation. Compared to the coarser-resolution sensors, Sentinel-2 can achieve a finer-scale of the intra-urban variation analysis and is appropriate for city-scale planning and monitoring. Nevertheless, the optical detection is sensitive to cloud cover and illumination conditions and their reliability in some climatic regions and seasons is limited. 
+
+## Reflection
+
+This week has drastically changed my interpretation of satellite imagery from looking at images as an image to seeing them as “quantitative measurements” of surface reflectance. The way I learned to challenge pixel values using histograms and scatter plots reinforced that important critical interpretation was needed rather than “looking good” results. Although SNAP tools seem attainable, the practical demonstrated how methodological choices (e.g., band selection, display stretching) can have a profound impact on analyses. These findings will be especially useful for future work with environmental monitoring and urban analysis that relies on clear and reproducible workflows.
