@@ -1,0 +1,13 @@
+# Week 2 — Portfolio and Presentation
+
+## Xaringan Presentation
+
+```{r}
+xaringanExtra::embed_xaringan(
+  url = "https://github.com/zackzheng577/casa0023-learning-diary/blob/main/week2_Xaringan.html",
+  ratio = "16:9"
+)
+
+Reflection
+
+This week focused on learning how to communicate remote sensing concepts through online presentations and learning diaries. Creating a Xaringan presentation encouraged me to think critically about structure, clarity and audience, rather than technical detail alone. Embedding the presentation within a Quarto learning diary highlights how analytical workflows and communication can be integrated into a single reproducible and publicly accessible portfolio.

@@ -1,0 +1,67 @@
+---
+title: "Sentinel-2 MSI"
+subtitle: "Overview, Applications and Reflection"
+author: "Zack Zheng"
+output:
+  xaringan::moon_reader:
+    css: ["default", "metropolis", "metropolis-fonts"]
+    highlightStyle: solarized-dark
+    ratio: "16:9"
+
+---
+
+## What is Sentinel-2?
+
+.pull-left[
+- Part of the Copernicus Programme (ESA)  
+- Multispectral Instrument (MSI)  
+- 13 spectral bands (VIS, NIR, SWIR)  
+- Spatial resolution: 10–60 m  
+- 5-day revisit time  
+
+Sentinel-2 provides high-resolution optical imagery for land and environmental monitoring, balancing spatial detail with frequent temporal coverage.
+]
+
+---
+## Why is Sentinel-2 important?
+
+- Free and openly accessible data
+- High spatial detail for city-scale studies
+- Suitable for monitoring rapid environmental change
+
+Compared to older sensors, Sentinel-2 enables more detailed analysis of intra-urban variation while remaining computationally manageable.
+
+
+---
+
+## Applications in Research
+
+Sentinel-2 data have been widely used for:
+
+- Vegetation monitoring (e.g. NDVI and seasonal dynamics)
+- Urban land cover classification
+- Mapping green infrastructure and impervious surfaces
+
+Its spectral configuration allows clear separation of vegetation, water and built-up areas in spectral feature space.
+
+
+---
+
+## Applications in Practice
+
+- Urban planning and land-use monitoring
+- Environmental impact assessment
+- Climate adaptation studies (e.g. urban heat and greening)
+
+Sentinel-2 is frequently combined with GIS and other EO datasets to support evidence-based policy making.
+
+
+---
+
+## Reflection
+
+Working with Sentinel-2 has shifted my understanding of satellite imagery from visual interpretation to quantitative analysis of surface reflectance. The sensor’s balance between resolution and coverage makes it particularly suitable for urban studies, though its reliance on optical wavelengths means cloud cover remains a limitation. Overall, Sentinel-2 appears highly relevant for future academic and applied work in environmental and urban remote sensing.
+
+---
+
+## Thank you

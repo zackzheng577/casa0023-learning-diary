@@ -1,0 +1,29 @@
+# Week 3 — Corrections
+
+## Summary
+
+This week focused on **corrections** in optical remote sensing and why preprocessing is not “optional”, but a necessary step if we want to compare images and extract reliable information. The core idea is that satellite images are not photographs: the values recorded by the sensor are affected by the atmosphere and illumination conditions, so the same surface can appear different across dates even if nothing on the ground has changed.
+
+A key concept was the difference between **digital numbers (DN)** and physically interpretable quantities. The materials explained how we can move from raw sensor measurements to **radiance** and then to **reflectance**, which is much more suitable for comparison across scenes and time. The session also introduced **atmospheric correction**, especially the **Dark Object Subtraction (DOS)** approach, which uses the assumption that the darkest pixels in a scene (e.g., deep water or shadow) should be close to zero reflectance, so the remaining signal can be interpreted as atmospheric haze that should be removed. While DOS is relatively simple, it clearly demonstrates why atmospheric effects matter and how they can distort analysis results.
+
+Finally, we explored **image enhancement** approaches as a complementary idea: rather than only “correcting” images, we can also transform them to highlight patterns. Techniques discussed included **spectral ratios/indices** (e.g., vegetation-related ratios), basic **filtering**, and the idea of **texture** and **PCA** as ways to compress or emphasise information that is not obvious in raw bands. Overall, Week 3 linked physical measurement, preprocessing choices, and interpretability in a way that feels directly relevant to any later classification or change-detection work.
+
+------------------------------------------------------------------------
+
+## Applications
+
+Corrections and enhancements are widely used because most real applications require **consistency and comparability**, not just visually pleasing images. For example, vegetation monitoring, land-cover mapping, and urban environmental assessment often rely on surface reflectance (or reflectance-derived indices) so that differences between dates reflect real surface change rather than different atmospheric conditions or solar geometry. Even a simple correction like DOS can improve interpretability and reduce haze-related bias when working with multi-temporal imagery.
+
+Enhancement techniques also have clear practical value. Ratios and indices can amplify targeted surface properties (e.g., vegetation response in red vs near-infrared), while filtering and texture measures can help capture spatial structure that is not well described by pixel brightness alone. PCA provides a useful way to reduce dimensionality and summarise correlated information across bands, which can support later modelling or classification workflows. In short, Week 3 showed how preprocessing is the bridge between raw EO data and credible downstream analysis.
+
+### Application: flood monitoring
+
+During my internship in Beijing, China, I worked on an operational flood monitoring task using satellite remote sensing. The figure below is a flood monitoring product for **Miyun Reservoir**, integrating satellite-derived water extent with contextual layers such as stations and administrative boundaries. The main purpose of this kind of output is rapid situational awareness: identifying water extent and communicating an interpretable product to non-technical audiences.
+
+![Figure. Flood monitoring of Miyun Reservoir and downstream river channel at 7:16 AM on July 27, 2025. Monitoring data originally from GF3C; created by Zack Zheng.](img/miyun.jpg)
+
+## Reflection
+
+This week made remote sensing feel more “serious” in a good way: it is not just about getting data and producing a map, but about understanding what the sensor actually measures and what must be corrected before interpretation. The DOS method was especially helpful conceptually because it shows the logic of atmospheric correction in a simple, testable way, even if more advanced methods exist. It also highlighted a trade-off I need to be conscious of in future work: complex corrections may be more physically accurate, but they also require more inputs, assumptions and processing effort, which might not always be feasible in time-sensitive workflows.
+
+Linking Week 3 content to my flood monitoring experience also reinforced that preprocessing decisions directly shape credibility. In high-stakes contexts (like hazards), outputs need to be robust and communicable, not just visually appealing. Going forward, I want to be more explicit when documenting remote sensing workflows: stating what corrections were applied, why they were chosen, and what limitations remain. That transparency is part of producing reproducible and trustworthy remote sensing analysis.
