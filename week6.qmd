@@ -1,0 +1,19 @@
+# Week 6 — Classification I
+
+## Summary
+
+This week's focus is on the fundamental logic of supervised image classification in Google Earth Engine. The practical session emphasizes moving away from visual interpretation of satellite imagery and instead using labeled training data to automatically classify land cover types. The workflow includes loading Sentinel-2 imagery, selecting a study area, preparing training samples, training the classifier, and applying the model to generate classified land cover maps. A key aspect of this process is understanding the relationship between classification and spectral information and training labels.
+
+In this example, I used Sentinel-2 imagery of Shenzhen and cropped the composite image to the study area before classification. I then manually created training polygons representing representative land cover types. Although initial practice suggested a broader range of categories, I simplified the model to three categories—**water, urban, and vegetation**—because agriculture is not particularly unique or widespread in Shenzhen's urban core and would introduce uncertainty into the training data.
+
+## Applications
+
+In my workflow, Sentinel-2 imagery was classified into three categories: water bodies, urban areas, and vegetation. The generated maps clearly distinguished major water bodies and reservoirs, high-density built-up areas, and mountainous or surrounding areas with high vegetation coverage. It can be used to estimate urban green space coverage, identify sparsely vegetated areas, or provide preliminary data for analyzing urban heat island effects, ecological connectivity, or land cover change. Compared to simple visual interpretation, classification provides a more systematic approach to generalizing cities into analytically meaningful categories.
+
+A key takeaway from this practice is that classification quality largely depends on the training samples. The quality of the model depends on the quality of the polygons used to represent each category. Shenzhen's urban landscape is highly heterogeneous, and some surface features may have similar spectral characteristics, making category definition crucial. Simplifying the model into three main categories makes the output more stable and easier to interpret.
+
+![Supervised land cover classification of Shenzhen derived from Sentinel-2 imagery in Google Earth Engine. Blue represents water, pink represents urban land, and green represents vegetation.](img/classification.png)
+
+## Reflection
+
+This week's practice gave me a more concrete understanding of the concept of classification. Previously, classification was more of an abstract machine learning concept to me, but by drawing my own training polygons and observing the classifier's response, I found the whole process much easier to grasp. I also discovered that training results depend heavily on how the categories are defined, the location of the polygons, the degree of variation captured in the training samples, and the size of the study area. I encountered some practical problems, such as memory limitations and training sample issues, which made me realize that remote sensing workflows often require simplification and tweaking rather than striving for a perfect initial run. In my case, reducing the number of categories and focusing on three main land cover types made the classification process easier to manage and interpret.
