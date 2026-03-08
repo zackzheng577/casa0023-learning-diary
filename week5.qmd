@@ -1,0 +1,19 @@
+# Week 5 — Google Earth Engine
+
+## Summary
+
+This week's practical focused on the basic workflow process of how to use GEE in remote sensing analysis. Our first step was to establish the geometry that defines the study area as well as to loading satellite imagery from the Landsat 9 Collection 2 Level-2 dataset. The imagery was filtered by date and cloud cover to only include relatively clear observations. Since an image collection includes multiple scenes, a median composite was produced to reduce noise and cloud contamination. The extracted composite image was cropped to a defined study area to focus the analysis on a specific region. Last the NDVI was computed from the near-infrared and red bands found in the Landsat images. NDVI is a popular measure of vegetation density and health, and the resulting NDVI map provided a clear visual representation of vegetation distribution within the study area.
+
+## Application
+
+Remote sensing indices like NDVI have various uses in urban and environmental analysis. The NDVI evaluates vegetation greenness by comparing the reflectance of near-infrared and red wavelengths, which allows researchers to identify areas with dense vegetation as well as regions with little or no vegetation. In urban environments, NDVI is also commonly applied to analysing green infrastructure and urban parks, as well as vegetation coverage across neighbourhoods.
+
+![Figure: NDVI map of the Delhi region derived from Landsat imagery using Google Earth Engine.](img/GEE.png)
+
+In this practical exercise, I used Google Earth Engine to process Landsat imagery to generate an NDVI map of the Delhi area. The resulting map highlights the spatial differences between vegetated and built-up areas. Urban areas typically have lower NDVI values ​​because buildings, roads, and other impermeable surfaces reflect less near-infrared radiation than vegetation. In contrast, farmland and green spaces surrounding the city show higher NDVI values.
+
+## Reflection
+
+My experience using Google Earth Engine highlights how cloud platforms are transforming remote sensing workflows. Traditionally, remote sensing analysis requires downloading large datasets and processing them with specialized software, which is both time-consuming and computationally resource-intensive. In contrast, GEE allows users to access satellite archives and perform analysis directly in the cloud environment, enabling much more efficient processing of large datasets.
+
+Another key takeaway this week was the importance of structured workflows in remote sensing analysis. The series of steps—defining the study area, sifting through satellite imagery, generating composite images, and calculating indices—provides a clear and reproducible framework for analyzing Earth observation data. Even relatively simple indices like NDVI, when applied systematically, can reveal meaningful spatial patterns.
