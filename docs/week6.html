@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Zack Zheng">
 
-<title>CASA0023 Learning Diary</title>
+<title>6&nbsp; Week 6 — Classification I – CASA0023 Learning Diary</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -66,7 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./week1.html" rel="next">
+<link href="./week7.html" rel="next">
+<link href="./week5.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -117,7 +82,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week6.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 6 — Classification I</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -144,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -172,6 +137,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week 4 — Policy: Using Earth Observation to Support Extreme Heat Action in New York City</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 5 — Google Earth Engine</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week6.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 6 — Classification I</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 7 — Classification II</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 8 — Temperature</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -182,7 +171,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">6.1</span> Summary</a></li>
+  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow"><span class="header-section-number">6.2</span> Workflow</a></li>
+  <li><a href="#interpretation-and-critical-discussion" id="toc-interpretation-and-critical-discussion" class="nav-link" data-scroll-target="#interpretation-and-critical-discussion"><span class="header-section-number">6.3</span> Interpretation and Critical Discussion</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">6.4</span> Reflection</a></li>
   </ul>
 </nav>
     </div>
@@ -191,19 +183,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CASA0023 Learning Diary</h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 6 — Classification I</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Zack Zheng </p>
-          </div>
-  </div>
     
   
     
@@ -214,16 +200,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>This is a Quarto book.</p>
-<p>To learn more about Quarto books visit <a href="https://quarto.org/docs/books" class="uri">https://quarto.org/docs/books</a>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<section id="summary" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">6.1</span> Summary</h2>
+<p>Supervised classification depends heavily on a series of human decisions made before the classifier even runs. These include how classes are defined, where training samples are placed, how much within-class variation is captured, and whether different land covers are spectrally distinct enough to separate at all. In that sense, classification is not just about the algorithm; it is also about how the landscape is conceptualised. The workshop made this especially clear when even small changes in training strategy produced noticeably different outputs.</p>
+<p>The lecture and readings also made the issue of accuracy much more important. A classified map can look convincing, but that does not necessarily mean it is reliable. Classification quality needs to be evaluated using formal measures such as confusion matrices and their derived metrics, rather than visual impression alone. More broadly, remote sensing data quality is shaped by multiple dimensions, and thematic accuracy is only one part of a wider uncertainty problem. Barsi et al.&nbsp;argue that classification accuracy is highly relevant but also highly uncertain, especially because error can accumulate from earlier processing stages and because training data themselves are often assumed to be error-free when they are not (Barsi 2018).</p>
+<p>Pal and Mather show that SVM can outperform maximum likelihood and ANN, particularly with small training datasets and high-dimensional data, but they also note that performance depends on classifier design choices and parameter settings (Pal &amp; Mather 2005). The workshop’s comparison between simple CART and Random Forest was not just about trying a different tool, but about thinking more carefully about robustness, generalisation, and how model design interacts with the structure of the training data.</p>
+</section>
+<section id="workflow" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="workflow"><span class="header-section-number">6.2</span> Workflow</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/week6 workflow.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 1. Classification Workflow and Major Output (CART)</figcaption>
+</figure>
 </div>
-</div>
+<p>First, a study area was defined using administrative boundary data, and Sentinel-2 imagery was filtered and composited to reduce cloud effects. The image was then clipped to the area of interest, which made subsequent processing more efficient and easier to interpret. Training data were created by manually drawing polygons for different land cover types, and spectral values were sampled from selected bands. This step was particularly important, as the classifier relies entirely on these labelled samples to learn the relationship between spectral signatures and land cover classes. The initial classification was carried out using a CART classifier, which produced a clear separation between water, urban, and vegetation. The result broadly reflects the spatial structure of Shenzhen, with urban areas dominating and vegetation appearing more fragmented. The workflow also included steps such as train-test splitting and Random Forest classification, highlighting that classification is not only about producing a map, but also about evaluating how reliable that map is.</p>
+</section>
+<section id="interpretation-and-critical-discussion" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="interpretation-and-critical-discussion"><span class="header-section-number">6.3</span> Interpretation and Critical Discussion</h2>
+<p>A main challenge was deciding how to define land cover classes in a way that is both meaningful and realistically separable. In practice, some categories are not clearly distinguishable based on spectral information alone. For example, urban surfaces, bare soil, and sparse vegetation can appear quite similar, which makes misclassification more likely. Because of this, simplifying the classification scheme to a smaller number of broader classes actually improved the overall stability of the results.</p>
+<p>What‘s more, how training and validation data were constructed is also tricky. The initial train-test split based on polygons did not provide a very reliable evaluation, as the number of polygons per class was limited and not fully representative. In contrast, switching to pixel-level random sampling produced a more robust validation approach.&nbsp; Accuracy is not just a property of the model, but also depends heavily on how the data are sampled and split.</p>
+</section>
+<section id="reflection" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="reflection"><span class="header-section-number">6.4</span> Reflection</h2>
+<p>After detailed investigation of the workflow, I realised that it depends much more on the choices that were made at the beginning and a whole lot more on the output. In addition, I hadn’t really appreciated how sensitive our outputs are to how training data is constructed. During the workshop, minor differences in how samples were drawn or how classes were grouped resulted in noticeable changes in the classification output. That gave me a greater awareness that the map isn’t merely output from the algorithm but is based on the assumptions built into the training data.</p>
+<p>I have also found that my attitude towards the results has changed to some extent. I used to rely primarily on whether the classification “looked right”. I’m more careful about that now, having seen firsthand how different validation approaches can produce different understandings of accuracy. I realised that a clean-looking map may still be misleading if the evaluation process is not robust. Another thing I found interesting is that simplifying the classification actually made the result more convincing. Rather than trying to capture too much detail, concentrating on a few well-defined classes reduced confusion and made the output easier to interpret. Initially, I never expected this but now it seems like a more practical way to approach classification.</p>
 
 
 </section>
@@ -630,10 +631,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./week5.html" class="pagination-link" aria-label="Week 5 — Google Earth Engine">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 5 — Google Earth Engine</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./week1.html" class="pagination-link" aria-label="Week 1 — Getting Started with Remote Sensing">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1 — Getting Started with Remote Sensing</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./week7.html" class="pagination-link" aria-label="Week 7 — Classification II">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 7 — Classification II</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
