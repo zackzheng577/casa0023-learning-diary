@@ -54,7 +54,7 @@
     "href": "week2.html",
     "title": "3  Week 2 — Portfolio and Presentation",
     "section": "",
-    "text": "3.1 Xaringan Presentation\n```{r} xaringanExtra::embed_xaringan( url = “https://github.com/zackzheng577/casa0023-learning-diary/blob/main/week2_Xaringan.html”, ratio = “16:9” )",
+    "text": "3.1 Xaringan Presentation\nXaringan Presentation entry URL is presented below:\n```{r} xaringanExtra::embed_xaringan( url = “https://zackzheng577.github.io/casa0023-learning-diary/week2_Xaringan.html”, ratio = “16:9” )",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 2 — Portfolio and Presentation</span>"
     ]

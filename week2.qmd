@@ -2,4 +2,6 @@
 
 ## Xaringan Presentation
 
-\`\`\`{r} xaringanExtra::embed_xaringan( url = "https://github.com/zackzheng577/casa0023-learning-diary/blob/main/week2_Xaringan.html", ratio = "16:9" )
+Xaringan Presentation entry URL is presented below:
+
+\`\`\`{r} xaringanExtra::embed_xaringan( url = "https://zackzheng577.github.io/casa0023-learning-diary/week2_Xaringan.html", ratio = "16:9" )
