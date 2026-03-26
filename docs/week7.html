@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>9&nbsp; Week 8 — Temperature – CASA0023 Learning Diary</title>
+<title>8&nbsp; Week 7 — Classification II – CASA0023 Learning Diary</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./week7.html" rel="prev">
+<link href="./week8.html" rel="next">
+<link href="./week6.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -81,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week8.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 8 — Temperature</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week7.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 7 — Classification II</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -150,13 +151,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week7.html" class="sidebar-item-text sidebar-link">
+  <a href="./week7.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 7 — Classification II</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week8.html" class="sidebar-item-text sidebar-link active">
+  <a href="./week8.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 8 — Temperature</span></span></a>
   </div>
 </li>
@@ -170,11 +171,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">9.1</span> Summary</a></li>
-  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow"><span class="header-section-number">9.2</span> Workflow</a></li>
-  <li><a href="#results-discussion" id="toc-results-discussion" class="nav-link" data-scroll-target="#results-discussion"><span class="header-section-number">9.3</span> Results Discussion</a></li>
-  <li><a href="#quick-discuss" id="toc-quick-discuss" class="nav-link" data-scroll-target="#quick-discuss"><span class="header-section-number">9.4</span> Quick Discuss</a></li>
-  <li><a href="#refelection" id="toc-refelection" class="nav-link" data-scroll-target="#refelection"><span class="header-section-number">9.5</span> Refelection</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">8.1</span> Summary</a></li>
+  <li><a href="#sub-pixel-analysis-and-mixed-pixel-problem" id="toc-sub-pixel-analysis-and-mixed-pixel-problem" class="nav-link" data-scroll-target="#sub-pixel-analysis-and-mixed-pixel-problem"><span class="header-section-number">8.2</span> Sub-pixel Analysis and Mixed Pixel Problem</a></li>
+  <li><a href="#object-based-image-analysis" id="toc-object-based-image-analysis" class="nav-link" data-scroll-target="#object-based-image-analysis"><span class="header-section-number">8.3</span> Object-based Image Analysis</a></li>
+  <li><a href="#critical-reflection" id="toc-critical-reflection" class="nav-link" data-scroll-target="#critical-reflection"><span class="header-section-number">8.4</span> Critical Reflection</a></li>
   </ul>
 </nav>
     </div>
@@ -183,7 +183,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 8 — Temperature</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 7 — Classification II</span></h1>
 </div>
 
 
@@ -200,58 +200,50 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="summary" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">9.1</span> Summary</h2>
-<p>This week I choose to focus on temperature. Trying to understanding urban heat from a remote sensing perspective.</p>
-<p>With the application of satellite images such as Landsat and MODIS, temperature can be gauged consistently across space - at a point where real-world ground measurements would have a problem. Nevertheless, I also discovered that LST is different from air temperature, and such separation is necessary to analyze the results, especially in relation to human heat exposure. This has given me insight to the advantages and demerits of remote sensing data in urban climate investigation. The workshop also showed that heat distribution in urban areas is highly dependent on surface properties. More impervious terrain, such as roads and buildings, traps heat, while vegetated regions stay cooler. This is in line with prior studies demonstrating the urban heat island effect is primarily attributed to anthropogenic land cover modifications (MacLachlan et al.&nbsp;2021). At the same time, the readings offered a more cynical view, emphasizing the fact that exposure to heat is unevenly distributed and frequently reflects more systemic socio-economic inequalities. More precisely, places with less tree cover and higher imperviousness are generally linked to elevated temperatures and less environmental protection (Nowak 2022), for instance.</p>
+<section id="summary" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">8.1</span> Summary</h2>
+<p>This week’s lecture and workshop gave me a considerable understanding of how spatial complexity impacts remote sensing classification. One lecture takeaway was that, for many situations such as heterogeneous environments, the regular assumption (each pixel representing one land cover class) is a pretty unrealistic one to apply. Introducing mixed pixels is a useful framework as we understand pixel-based classification can be difficult in practice to get reliable results.</p>
+<p>Expanding the idea further, the workshop was able to present two different proposals in order to overcome this limitation. As indicated by a sub-pixel analysis, land cover should be considered as a combination of different elements in a pixel rather than a single discrete entity. It opened my mind to “representation of proportions” rather than classification (I found this particularly illuminating when I had to study urban areas that had very fragmented land cover).</p>
+<p>In comparison, the object-based workflow presented a new solution to the spatial complexity problem by considering the spatial arrangement of pixels. Using segmentation and object-level feature extraction, the method prioritized the contribution of spatial context as opposed to spectral information. This brought to light that classifying was more than a question of spectral separability: how could we adapt the spatial structure so as to inform interpretation?</p>
 </section>
-<section id="workflow" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="workflow"><span class="header-section-number">9.2</span> Workflow</h2>
-<p>1.Landsat imagery was used to generate a high-resolution land surface temperature (LST) map, while MODIS data were used for analysing temporal variation due to their higher revisit frequency. Pre-processing included filtering by summer months, clipping to the Beijing study area, and applying scale factors to convert raw values into Celsius. This ensured that the temperature outputs were physically meaningful and comparable across datasets. To explore temporal dynamics, a MODIS-based time series was generated (Figure 1). This shows how temperature fluctuates across the summer period, with noticeable variability rather than a stable trend. This step highlights the importance of using high-frequency data when analysing environmental processes that change over time.</p>
+<section id="sub-pixel-analysis-and-mixed-pixel-problem" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="sub-pixel-analysis-and-mixed-pixel-problem"><span class="header-section-number">8.2</span> Sub-pixel Analysis and Mixed Pixel Problem</h2>
+<p>The sub-pixel workflow addressed a fundamental limitation in remote sensing: the presence of mixed pixels. According to Foody (2004), the assumption that each pixel corresponds to a single land cover class is often violated in real-world imagery, especially in heterogeneous urban environments. Mixed pixels may arise due to small sub-pixel features, boundary effects, or gradual transitions between land cover types. Spectral unmixing was employed on Landsat imagery to estimate the proportion of urban, vegetation, and water within each pixel. The resulting fraction maps revealed that many pixels contain a mixture of land cover types rather than a single dominant class.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/week8/ee-chart.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 1.Temperature time series derived from MODIS data, showing temporal variation in land surface temperature across Beijing during summer 2022.</figcaption>
+<p><img src="img/Reclassified all 2.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 1. Sub-pixel fraction-based classification</figcaption>
 </figure>
 </div>
-<p>2.While MODIS provides strong temporal insight, it lacks spatial detail. To address it, Landsat data were used to produce a higher-resolution temperature map. However, analysing this map directly does not allow for quantitative comparison between areas, so zonal statistics were applied.</p>
-<p>Initially, GAUL level 2 administrative boundaries were used as spatial units, but this resulted in overly coarse aggregation, with only two units representing the entire study area. This made it difficult to interpret spatial variability. To overcome this limitation, a regular grid was introduced as an alternative spatial unit. The study area was divided into thousands of smaller cells, allowing temperature to be analysed at a much finer scale (Figure 2).</p>
+<p>The reclassified output shows a highly fragmented spatial pattern, with considerable pixel-level variability. This kind of salt-and-pepper effect reflects the inherent instability of assigning a single class to mixed pixels. Although sub-pixel analysis shows more slight differences about land cover composition, converting these fractions into classes introduces more uncertainty and noise.</p>
+</section>
+<section id="object-based-image-analysis" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="object-based-image-analysis"><span class="header-section-number">8.3</span> Object-based Image Analysis</h2>
+<p>To address the limitations of pixel-based approaches, the second part of the practical implemented an object-based workflow. This began with SNIC segmentation, which groups spectrally similar neighbouring pixels into spatially coherent objects.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/week8/Grid Constructed.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 2. Grid-based aggregation of Landsat-derived temperature, showing spatial variation at a finer resolution across Beijing.</figcaption>
+<p><img src="img/SNIC.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 2. SNIC segmentation result</figcaption>
 </figure>
 </div>
-<p>3.The temperature values of each grid cell were converted into a heat index using percentile-based classification. Each cell was assigned a value from 1 to 5, representing its relative position within the temperature distribution. This standardisation makes the results easier to interpret and compare across space, transforming raw temperature data into a more meaningful indicator of heat intensity (Figure 3).</p>
+<p>Following segmentation, object-level features were extracted, including mean spectral bands and NDVI values. These were then used as inputs for a supervised classification model.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/week8/Heat Index Grid.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 3. Heat index map based on percentile classification of grid-level temperature, where higher values indicate relatively hotter areas.</figcaption>
+<p><img src="img/NDVI.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 3. NDVI result</figcaption>
+</figure>
+</div>
+<p>The object-based classification is more spatially coherent and has a smoother profile than the pixel classification result. The large homogeneous regions are much clearer, the noise seen in the sub-pixel classification is significantly reduced, and hence the graph is clearer. This enhancement is due to the fact that the influence of mixed pixels is mitigated if we combine neighbouring pixels into meaningful spatial units using object-based approaches.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/Objected-based-classification.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 4. Object-based classification result</figcaption>
 </figure>
 </div>
 </section>
-<section id="results-discussion" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="results-discussion"><span class="header-section-number">9.3</span> Results Discussion</h2>
-<p>The results reveal clear temporal and spatial patterns in land surface temperature across Beijing, highlighting both environmental processes and underlying spatial inequalities.</p>
-<p>From a time point perspective, the MODIS time series (Figure 1) indicates that temperature varies quite significantly during the summer months, as opposed to following a uniform or regular pattern. Peak values are generally observed during mid-summer, while short-term troughs are also evident. These variations are likely due to changing weather conditions, including cloud cover and atmospheric variability, which can impact satellite-based temperature data. This highlights the significance of high-frequency datasets such as MODIS when visualizing dynamic environmental processes, as single-date imagery would therefore be insufficient to convey this variability.</p>
-<p>In contrast, spatial patterns can be captured better by Landsat data. As depicted in the Landsat-generated temperature map (Figure 4), the heat and cold temperature in Beijing are in different local areas, with higher temperatures on the southern side, while the lower temperatures are in the north, presenting a noticeable spatial gradient. This pattern is significantly related to differences in land cover and topography. The southern areas are more urbanised and comprised predominantly of impervious surfaces, which absorb and retain heat, contrasting with the northern areas which are more mountainous and vegetated, allowing for greater cooling through evapotranspiration. This spatial dynamic is in line with what is commonly known as the urban heat island effect, where built-up environments experience higher temperatures than adjacent natural regions.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/week8/MODIS Surface Temp.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 4. Landsat-derived land surface temperature showing spatial variation across Beijing, with higher temperatures in urban areas and lower temperatures in mountainous regions.</figcaption>
-</figure>
-</div>
-</section>
-<section id="quick-discuss" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="quick-discuss"><span class="header-section-number">9.4</span> Quick Discuss</h2>
-<p><strong>Could redlined areas experience higher temperatures?</strong></p>
-<p>From a physical perspective, areas designated as red-line zones tend to have higher impermeable surface coverage and lower vegetation cover. The impermeable surface area increases significantly, while tree cover decreases with increasing designation level (Nowak et al., 2022). This leads to reduced evapotranspiration and increased heat retention, resulting in higher surface temperatures. Empirically, this thermal unevenness can be measured using Earth observation data, as historically, red-line zones have had average temperatures approximately 2.6°C higher than other areas, with even greater differences observed in some cities (Wilson 2020). SAR adds another layer to the knowledge. Temperature data indicates where heat is concentrated, but SAR explains why these areas are hotter. By modelling variation in surface roughness, building density, and material properties, SAR provides insight into the structural features resulting from high heat exposure. For instance, dense urban fabrics with little vegetation (a feature of historically disinvested environments) would yield specific SAR backscatter signatures as they are geometrically complex and composed of specific materials. This implies that the relationship between redlining and temperature is by no means accidental — it is mediated by urban form and land cover which can be observed using remote sensing. Decisions of past planning affected investment, infrastructure, and land use, hence the physical landscape that dictates modern temperatures.</p>
-</section>
-<section id="refelection" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="refelection"><span class="header-section-number">9.5</span> Refelection</h2>
-<p>At the start, I was mainly focused on getting the outputs right — making sure the temperature maps looked reasonable and the code ran without errors. But as the workflow progressed, especially when we moved into spatial aggregation, it became clear that the analytical choices behind the map matter just as much as the data itself.</p>
-<p>For example, using the GAUL level 2 boundaries initially seemed like a straightforward step, but the result was surprisingly uninformative, with only two spatial units representing the whole study area. At first I thought something had gone wrong, but it turned out to be a limitation of the dataset rather than the method. This made me realise that spatial analysis is not just about applying tools, but also about critically evaluating whether the chosen spatial unit is appropriate. Once I switched to a grid-based approach, the results immediately became more meaningful, and the spatial patterns were much easier to interpret. So in a way, this was less of a technical fix and more of a conceptual improvement.</p>
-<p>At the same time, working with both Landsat and MODIS also highlighted an important trade-off. Landsat gives much better spatial detail, which is great for identifying local patterns, but it lacks temporal continuity. On the other hand, MODIS captures temporal variation very well, but the spatial resolution is quite coarse. Seeing these two datasets side by side helped me better understand why combining multiple data sources is often necessary in remote sensing, rather than relying on a single ‘best’ dataset.</p>
+<section id="critical-reflection" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="critical-reflection"><span class="header-section-number">8.4</span> Critical Reflection</h2>
+<p>To begin with, the segmentation method brings some degree of subjectivity to the classification process. The final classification is extremely dependent on such parameters as size and compactness of an object. In this case, changing these parameters might also greatly alter the spatial structure results—indicating object-based classification is not entirely objective. Second, the approach may cause over-smoothing to occur to such an extent that the fine spatial variation is diminished. This is evident in the large homogeneous regions observed in the classification output, which may mask the more subtle or even transitional land cover features. Third, the classification reliability is highly dependent on the selection of training samples. In this case, the classification performance varied noticeably depending on the quality and representativeness of the manually selected polygons. This illustrates the need for careful training data selection in supervised classification workflows. Finally, visually improved classification results do not necessarily imply higher accuracy. Furthermore, the spatial autocorrelation in remote sensing data can lead to overly optimistic interpretations of model performance if spatial dependencies are not properly accounted for. In this respect, the spatial coherence of the object-based result may partly reflect inherent spatial structure rather than true predictive accuracy.</p>
 
 
 </section>
@@ -658,11 +650,14 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./week7.html" class="pagination-link" aria-label="Week 7 — Classification II">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 7 — Classification II</span></span>
+      <a href="./week6.html" class="pagination-link" aria-label="Week 6 — Classification I">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 6 — Classification I</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./week8.html" class="pagination-link" aria-label="Week 8 — Temperature">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 8 — Temperature</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
