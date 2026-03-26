@@ -1,32 +1,292 @@
 [
   {
-    "objectID": "week1.html",
-    "href": "week1.html",
-    "title": "1  Week 1 — Getting Started with Remote Sensing",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CASA0023 Learning Diary",
     "section": "",
-    "text": "1.1 Summary\nThis week taught the basic principles of optical remote sensing with a hands-on exercise on a Sentinel-2 image using SNAP. Instead of taking satellite images as mere photographs, the practical aimed to learn how Earth surface features can interact with electromagnetic radiation at different wavelengths. And by visualising discrete spectral bands (e.g. red and near-infrared) and combining them into true and false colour composites, you can easily see that the spectral effects vary by type of land cover.\nOne thing I found to be very helpful in the whole practical was exploring histograms and scatter plots to examine pixel value distributions. Adjusting contrast through histogram stretching demonstrated how visual interpretation depends heavily on display choices rather than changes to the underlying data. Scatter plots of red versus near-infrared bands illustrated the concept of spectral feature space, where vegetation, water and built-up areas occupy different regions. This provided an important conceptual foundation for understanding how later techniques such as classification and spectral indices operate.",
+    "text": "1 Overview\nThis book collects my weekly practical learning diaries for Weeks 1–8 of the module Remotely Sensing Cities and Environments.\nDocumenting the practical workflow, outputs, interpretations, and reflections developed across the course.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week 1 — Getting Started with Remote Sensing</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
     ]
   },
   {
-    "objectID": "week1.html#applications",
-    "href": "week1.html#applications",
-    "title": "1  Week 1 — Getting Started with Remote Sensing",
-    "section": "1.2 Applications",
-    "text": "1.2 Applications\nSome commonly used multispectral optical remote sensing data, such as Sentinel-2 in environmental and urban data, are mostly designed to balance spatial resolution, spectral coverage and temporal frequency. Deep integration between red absorption and near-infrared reflectance in vegetation observation has been widely applied in evaluating plant health, biomass and seasonal dynamics in vegetation monitoring. This concept has become the basis of several commonly used indices and land cover classification methods both for ecological and agricultural research.\nFalse colour composites and spectral feature space analysis have also been used in urban domains to profile impervious surfaces and green infrastructure and water bodies, contributing to research on urban expansion, environmental inequality and climate adaptation. Compared to the coarser-resolution sensors, Sentinel-2 can achieve a finer-scale of the intra-urban variation analysis and is appropriate for city-scale planning and monitoring. Nevertheless, the optical detection is sensitive to cloud cover and illumination conditions and their reliability in some climatic regions and seasons is limited.",
+    "objectID": "week1.html",
+    "href": "week1.html",
+    "title": "2  Week 1 — Getting Started with Remote Sensing",
+    "section": "",
+    "text": "2.1 Summary\nRemote sensing technology—based on Earth Observation (EO)—can be used to gather data about the Earth’s surface without direct contact, thus making it possible to collect information on a wide range of environmental conditions in a large-scale and consistent manner. Satellite data, as pointed out in the lecture, is an important means of detecting patterns and changes that field-based methods cannot easily capture by themselves. A theme that was addressed this week is how various surfaces interact with electromagnetic radiation. By passive sensors, optical remote sensing tracks reflected sunlight in different wavelengths. These differences in reflectance create a spectral signature, and are used to differentiate land cover types. For example, vegetation tends to strongly reflect near-infrared radiation while absorbing visible red light, whereas built-up urban surfaces generally exhibit lower and more uniform reflectance. Data visualization of patterns in land cover and its correlation with physical properties is possible by means of RGB imagery, false colour composites, vegetation indices, etc. This week’s work was primarily focused on defining a clear link between spectral behavior and land cover classification, a foundational phase.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week 1 — Getting Started with Remote Sensing</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Week 1 — Getting Started with Remote Sensing</span>"
+    ]
+  },
+  {
+    "objectID": "week1.html#data-exploration-and-visualisation",
+    "href": "week1.html#data-exploration-and-visualisation",
+    "title": "2  Week 1 — Getting Started with Remote Sensing",
+    "section": "2.2 Data Exploration and Visualisation",
+    "text": "2.2 Data Exploration and Visualisation\nThe practical component focused on exploring satellite imagery through a series of visualisation techniques, each providing a different perspective on surface reflectance and land cover characteristics. The analysis began with a comparison of natural colour RGB imagery from Sentinel-2 and Landsat data. While both datasets capture similar spatial patterns, the Sentinel-2 image provides noticeably higher spatial resolution, allowing for clearer identification of urban structures, green spaces, and river features. In contrast, the Landsat image appears more generalised, with finer details less distinguishable.\n\n\n\nFigure 1. Comparison of Sentinel-2 and Landsat RGB imagery highlighting differences in spatial resolution.\n\n\nTo further enhance the visibility of vegetation, a false colour composite was generated using near-infrared (NIR) bands. In this representation, vegetation appears in bright red tones due to its strong reflectance in the NIR region, while urban areas and water bodies remain relatively subdued. This visualisation makes it easier to distinguish vegetated areas from built-up surfaces.\n\n\n\nFigure 2. NDVI map highlighting distribution across the study area.\n\n\nFinally, a scatter plot comparing B4 (red) and B8 (near-infrared) bands was used to explore the relationship between different spectral bands. The plot shows a clear clustering pattern, indicating that different land cover types occupy distinct regions in spectral feature space. This relationship is particularly important for classification, as it highlights how multiple bands can be combined to improve discrimination between surface types.\n\n\n\nFigure 3. Scatter plot of B4 and B8 values illustrating spectral clustering of land cover types.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Week 1 — Getting Started with Remote Sensing</span>"
+    ]
+  },
+  {
+    "objectID": "week1.html#spectral-analysis-and-interpretation",
+    "href": "week1.html#spectral-analysis-and-interpretation",
+    "title": "2  Week 1 — Getting Started with Remote Sensing",
+    "section": "2.3 Spectral Analysis and Interpretation",
+    "text": "2.3 Spectral Analysis and Interpretation\nMoving beyond visual interpretation, I focused on analysing the spectral characteristics of different land cover types, particularly using the near-infrared (B8) band. The distribution of B8 values density indicates how various categories respond to the near infrared region in the land cover. Different vegetation types such as forestry and grass have significantly larger reflectance than urban and high density urban environments. This is consistent with expected behaviour of vegetation reflecting a very high level of near infrared radiation as a function of the leaf structure within. In contrast, built-up surfaces tend to have lower and more compact reflectance ranges.\n\n\n\nFigure 4. Density distribution of B8 values across different land cover types, showing clear separation between vegetation and urban surfaces.\n\n\nThe spectral signature comparison across multiple bands further supports this pattern. The vegetation classes show a distinct increase in reflectance from the red band (B4) to the near-infrared band (B8), forming a characteristic spectral curve. Urban and bare earth surfaces exhibit a flatter response, with less variation across bands.\n\n\n\nFigure 5. Spectral signatures of different land cover types across multiple bands, highlighting the strong near-infrared response of vegetation.\n\n\nThe spectral band relationship is also observed in the scatter plot of B4 and B8 values (See Figure 3). The plot shows that pixels tend to cluster into distinct groups, indicating that different land cover types are found in separate regions of the spectral feature space. As an example, vegetation is typically shown to have a higher value for B8 relative to B4, while urban areas are clustered into low-value regions. Although there is some overlap between classes, in general the pattern shows that combining bands provides stronger discrimination than is possible with a single band alone.\nLook back to NDVI output (see Figure2), areas with high NDVI values correspond closely with regions identified as vegetation in both the false colour image and the spectral analysis, while urban areas consistently show low NDVI values. This consistency across different methods increases confidence in the interpretation of land cover patterns.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Week 1 — Getting Started with Remote Sensing</span>"
     ]
   },
   {
     "objectID": "week1.html#reflection",
     "href": "week1.html#reflection",
-    "title": "1  Week 1 — Getting Started with Remote Sensing",
-    "section": "1.3 Reflection",
-    "text": "1.3 Reflection\nThis week has drastically changed my interpretation of satellite imagery from looking at images as an image to seeing them as “quantitative measurements” of surface reflectance. The way I learned to challenge pixel values using histograms and scatter plots reinforced that important critical interpretation was needed rather than “looking good” results. Although SNAP tools seem attainable, the practical demonstrated how methodological choices (e.g., band selection, display stretching) can have a profound impact on analyses. These findings will be especially useful for future work with environmental monitoring and urban analysis that relies on clear and reproducible workflows.",
+    "title": "2  Week 1 — Getting Started with Remote Sensing",
+    "section": "2.4 Reflection",
+    "text": "2.4 Reflection\nThe prac this week assisted me in transitioning from looking only at satellite images to appreciating how and why different surfaces look the way they do. Initially, the outputs were mostly visual and descriptive, but the spectral analysis reinforced that those patterns are rooted in physical processes, particularly how different materials interact with electromagnetic radiation. One of the biggest takeaways for me was how great near-infrared data is at telling vegetation from the urban landscape. The consistency between density plots, spectral signatures, scatter plots and NDVI outputs was reassuring and not just visually convincing. However, I also knew that not all land cover types were neatly distinguished. For instance, there is some overlap in the B8 distribution between urban and bare earth, and so simply classifying according to the spectral data may entail quite the uncertainty. The selection process of training samples was another limitation. In this case, the points were chosen by hand, so inevitably some subjectivity is involved, particularly in regions where land cover is mixed or unclear. It made me realise that while the analysis appeared quantitative, at some point it still relies on human judgement. In more complicated or larger-scale applications, this may introduce bias. What’s more, the comparison between Sentinel-2 and Landsat imagery also highlighted how data resolution can influence interpretation. The higher resolution of Sentinel data facilitated easier feature recognition and training area selections, presumably enhancing the quality of the analysis.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week 1 — Getting Started with Remote Sensing</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Week 1 — Getting Started with Remote Sensing</span>"
+    ]
+  },
+  {
+    "objectID": "week2.html",
+    "href": "week2.html",
+    "title": "3  Week 2 — Portfolio and Presentation",
+    "section": "",
+    "text": "3.1 Xaringan Presentation\nXaringan Presentation entry URL is presented below:\n```{r} xaringanExtra::embed_xaringan( url = “https://zackzheng577.github.io/casa0023-learning-diary/week2_Xaringan.html”, ratio = “16:9” )",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 2 — Portfolio and Presentation</span>"
+    ]
+  },
+  {
+    "objectID": "week3.html",
+    "href": "week3.html",
+    "title": "4  Week 3 — Corrections",
+    "section": "",
+    "text": "4.1 Summary\nThis week felt like a step up from just visualising satellite images to actually starting to process and transform them in a more meaningful way. Instead of only looking at images, we began to think about how to prepare, enhance and combine different types of data to better understand what is happening on the ground. One thing that stood out to me is how each method adds a different layer of information. For instance, NDVI is quite intuitive and directly shows vegetation patterns, so it’s relatively easy to interpret. In contrast, texture analysis felt a bit less obvious at first, but once I understood that it looks at how pixel values change within a neighbourhood, it made more sense. In a way, it adds spatial context that a single pixel value cannot capture. At the same time, the idea of combining multiple layers and then applying PCA was quite interesting. Once NDVI and texture were added to the original bands, the dataset became much more complex, and it was no longer practical to interpret each layer separately. PCA helped simplify this by highlighting the main patterns in the data, and it was quite clear that the first component already captured most of the variation.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 3 — Corrections</span>"
+    ]
+  },
+  {
+    "objectID": "week3.html#process-workflow",
+    "href": "week3.html#process-workflow",
+    "title": "4  Week 3 — Corrections",
+    "section": "4.2 Process Workflow",
+    "text": "4.2 Process Workflow\nThe first step I did was to load and merge two Landsat scenes covering Cape Town. Since the study area spans across two tiles, a mosaic operation was required to combine them into a single image. However, the two scenes were acquired on different dates, which resulted in some visible differences in colour and brightness, especially in the southern part of the image where cloud cover is also present.\n\n\n\nFigure 1. RGB mosaic\n\n\nOnce the mosaic was produced, a true colour composite (Band 4-3-2) was also generated to establish a baseline for visualisation. This is useful to recognize trends of general land cover, e.g., coastlines, mountainous areas, and built-up regions. The main limitation is present at this point since the mismatch between scenes introduces inconsistencies that may affect later analysis. Then NDVI, which is a simple, yet effective spectral index for visualizing vegetation, was calculated. When NDVI is compared to the RGB image, vegetated and non-vegetated areas appear in clearer separation. Vegetated regions have higher values in visual form than urban areas and water bodies do, for example. As such, NDVI provides a good basis for beginning spatial pattern analysis in the landscape.\n\n\n\nFigure 2. Filtered NDVI\n\n\nFollowing this, a texture analysis was performed using a GLCM-based approach. Among the different texture metrics tested, contrast was selected because it showed the most distinct spatial variation. Unlike NDVI, which is based purely on spectral information, texture captures how pixel values change within a neighbourhood. This makes it particularly useful for identifying heterogeneous areas, such as urban regions, where pixel values vary more rapidly.\n\n\n\nFigure 3. Textures (Contrast)\n\n\nAfter all of this, all layers (spectral bands, NDVI, and texture) were combined and analysed using Principal Component Analysis (PCA). This step helps to reduce the complexity of the dataset by summarising the main patterns of variation into a smaller number of components. The first principal component captures the majority of the variance and provides a more integrated view of the landscape. Compared to the individual layers, the PCA output highlights broader spatial structures while still retaining key differences between land cover types.\n\n\n\nFigure 4. PC1 Map",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 3 — Corrections</span>"
+    ]
+  },
+  {
+    "objectID": "week3.html#challenges-and-interpretation",
+    "href": "week3.html#challenges-and-interpretation",
+    "title": "4  Week 3 — Corrections",
+    "section": "4.3 Challenges and Interpretation",
+    "text": "4.3 Challenges and Interpretation\nWhile the overall workflow was completed successfully, several challenges came up during the process, which also helped me better understand the limitations of remote sensing data and methods.\nThe initial concerns pertained to atmospheric correction. At first, DOS was applied, but one of the scenes failed due to negative haze estimation. This indicates that DOS assumptions were insufficient for this dataset, either the scene did not have appropriate dark objects or the overall atmospheric conditions were already relatively clear. So the pipeline proceeded with the original imagery. This underscored that atmospheric correction is not always straightforward; hence different methods may be required depending on the data. Another problem was the discrepancy between the two Landsat images. Since they were taken on different dates, there were obvious differences in colour and brightness after mosaicking. Also, cloud cover in the southern area of the image added yet another source of inconsistency. Interpretation is therefore less accurate in some areas when sudden alterations are visible at the boundary between the two images. This made me realize that data selection is just as important as processing, and ideally, scenes should be taken at similar times and under similar conditions.\nThe texture analysis also required some experimentation. Initially, the homogeneity metric produced very little variation across the image, making it difficult to interpret. After testing different metrics, contrast was found to be more effective in highlighting spatial differences, particularly in urban and heterogeneous areas. This suggests that the choice of texture metric can significantly influence the results, and there is no single “best” option for all cases.\nI have to mention about a practical issue when I attempt to perform PCA using the full dataset. Converting the entire raster into a dataframe caused memory limitations, which prevented the analysis from running. This was resolved by applying random sampling before PCA, which reduced the computational load while still preserving the overall structure of the data.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 3 — Corrections</span>"
+    ]
+  },
+  {
+    "objectID": "week3.html#reflection",
+    "href": "week3.html#reflection",
+    "title": "4  Week 3 — Corrections",
+    "section": "4.4 Reflection",
+    "text": "4.4 Reflection\nLooking back at this week’s practical, what I found most interesting is how much the outcome depends not just on the methods themselves, but on the quality and consistency of the data. At the beginning, I assumed that once the workflow is clear, the results would naturally make sense. However, issues like scene mismatch and cloud cover showed that even if the processing steps are technically correct, the outputs can still be affected quite significantly by the input data.\nAnother thing I discovered was that a lot of approaches we used aren’t quite as “plug-and-play” as they sound on the surface. The failure of the DOS correction and the need to explore various texture metrics say that we are not only trying out different ways of doing things, this also shows it’s not one correct way to go about things. Rather, it is often working through multiple alternatives and selecting what seems to work for a given dataset. It took the sense that there should be processes we follow for this and transformed it from being a matter of rigid steps to an exercise in fact, in making informed decisions.\nI was also exposed to the practical obstacles inherent in the use of large spatial collections. The problem of PCA and memory was what I did not anticipate initially but it demonstrated how computation-driven limitations can have a direct impact on methodological choices. However, sampling was used to solve the problem, and this made me realize that efficiency is a key consideration for real-world analysis.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 3 — Corrections</span>"
+    ]
+  },
+  {
+    "objectID": "week4.html",
+    "href": "week4.html",
+    "title": "5  Week 4 — Policy: Using Earth Observation to Support Extreme Heat Action in New York City",
+    "section": "",
+    "text": "5.1 Summary\nThis week was based on identifying a policy challenge in a city and how earth observation (EO) data might address it. For my case study, I chose New York City using OneNYC 2050 and the more recent PlaNYC 2024 Progress Report as the policy backdrop. That makes a compelling case because New York already presents climate change as a major long-term issue in the city and cites extreme heat as a huge risk to its health, infrastructure and life. By the 2050s, according to OneNYC, New York City will be hotter than ever before, and more New Yorkers are projected to die every summer of intense heat, with the burden being disproportionately borne by vulnerable communities.\nThe policy response is already taking shape. OneNYC links climate adaptation to public health, tree planting, cool roofs, and support for the most heat-vulnerable neighbourhoods. That agenda is further underway in the form of a maximum indoor temperature policy, expanding the use of cool roofs, and a 30 percent tree canopy goal which is prioritised based on the Heat Vulnerability Index, according to PlaNYC 2024. Extreme heat provides a useful policy challenge for EO, since heat exposure and cooling infrastructure have substantial spatial dimensions. For the EO part I put together a workflow combining thermal satellite imagery and optical imagery. Thermal imagery, such as Landsat-derived land surface temperature, might show urban heat hotspots all around the city. Optical imagery, like Sentinel-2, could be used to map vegetation and greenness patterns, which could be used as a proxy for cooling potential. Combined these datasets may provide support for a spatially targeted heat adaptation strategy, indicating how the most extreme temperatures coincide with low greenness and vulnerable built environments. This is very closely aligned with the policy week requirement to identify a remotely sensed dataset that may contribute to supporting a metropolitan policy goal.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 4 — Policy: Using Earth Observation to Support Extreme Heat Action in New York City</span>"
+    ]
+  },
+  {
+    "objectID": "week4.html#applications",
+    "href": "week4.html#applications",
+    "title": "5  Week 4 — Policy: Using Earth Observation to Support Extreme Heat Action in New York City",
+    "section": "5.2 Applications",
+    "text": "5.2 Applications\nTo bolster extreme heat policy in New York City, remotely sensed data could help monitor the spatial patterns of urban heat and cooling infrastructure in New York City. Two datasets are ideal for this: Landsat thermal data and Sentinel-2 optical imagery. For example, there are two Land Surface Temperature (LST) products available that can be used for mapping urban heat effects on the USGS EarthExplorer platform, including Landsat 8 and Landsat 9 products. These datasets give thermal descriptions from satellite sensors, and provide the data to analysts to provide a spatial resolution estimate of surface temperature that is suitable for city-scale analysis. Using thermal pictures from heat events, areas with consistently high land surface temperatures could be classified as urban heat hotspots. Such areas could indicate dense built environments with limited vegetation or high concentrations of impervious surfaces. Secondly, I used Sentinel-2 imagery to derive vegetation indicators such as the Normalised Difference Vegetation Index (NDVI). NDVI and related metrics provide information on vegetation density and greenness, which are strongly associated with cooling effects in urban environments. By mapping vegetation cover across neighbourhoods, analysts could identify areas where tree canopy or green infrastructure is limited. Combining these datasets would allow a spatial comparison between heat exposure and cooling capacity. Areas with high surface temperatures and low vegetation cover could be prioritised for interventions such as tree planting, cool roofs, or other urban cooling measures described in PlaNYC.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 4 — Policy: Using Earth Observation to Support Extreme Heat Action in New York City</span>"
+    ]
+  },
+  {
+    "objectID": "week4.html#reflection",
+    "href": "week4.html#reflection",
+    "title": "5  Week 4 — Policy: Using Earth Observation to Support Extreme Heat Action in New York City",
+    "section": "5.3 Reflection",
+    "text": "5.3 Reflection\nI think New York City is a particularly effective case study because the policy need is already well defined, and EO has an obvious role in helping the city act more strategically. The most useful lesson for me this week was that EO is not just about producing attractive maps, but about helping governments decide where to intervene, why those places matter, and how limited resources should be allocated. In this case, the strongest contribution of EO would be to turn a broad climate adaptation agenda into a more targeted and evidence-based spatial strategy.\nAt the same time, this exercise also showed that EO on its own is not enough. Surface temperature or greenness maps do not automatically tell us who is most vulnerable, who has access to cooling, or which interventions are politically or financially realistic. That means EO is most valuable when combined with policy goals, health evidence, and community knowledge. For me, this makes the NYC case especially interesting: it shows how remote sensing can contribute to urban policy in a way that is practical, spatially explicit, and closely tied to equity as well as climate resilience.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 4 — Policy: Using Earth Observation to Support Extreme Heat Action in New York City</span>"
+    ]
+  },
+  {
+    "objectID": "week5.html",
+    "href": "week5.html",
+    "title": "6  Week 5 — Google Earth Engine",
+    "section": "",
+    "text": "6.1 Summary\nThis week’s practical focused on the basic workflow process of how to use GEE in remote sensing analysis. The first step was to establish the geometry that defines the study area as well as to loading satellite imagery from the Landsat 9 Collection 2 Level-2 dataset. The imagery was filtered by date and cloud cover to only include relatively clear observations. Since an image collection includes multiple scenes, a median composite was produced to reduce noise and cloud contamination. The extracted composite image was cropped to a defined study area to focus the analysis on a specific region. Last the NDVI was computed from the near-infrared and red bands found in the Landsat images. NDVI is a popular measure of vegetation density and health, and the resulting NDVI map provided a clear visual representation of vegetation distribution within the study area.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 5 — Google Earth Engine</span>"
+    ]
+  },
+  {
+    "objectID": "week5.html#application",
+    "href": "week5.html#application",
+    "title": "6  Week 5 — Google Earth Engine",
+    "section": "6.2 Application",
+    "text": "6.2 Application\nRemote sensing indices like NDVI have various uses in urban and environmental analysis. The NDVI evaluates vegetation greenness by comparing the reflectance of near-infrared and red wavelengths, which allows researchers to identify areas with dense vegetation as well as regions with little or no vegetation. In urban environments, NDVI is also commonly applied to analysing green infrastructure and urban parks, as well as vegetation coverage across neighbourhoods.\n\n\n\nFigure: NDVI map of the Delhi region derived from Landsat imagery using Google Earth Engine.\n\n\nI used Google Earth Engine to process Landsat imagery to generate an NDVI map of the Delhi area. The resulting map highlights the spatial differences between vegetated and built-up areas. Urban areas typically have lower NDVI values ​​because buildings, roads, and other impermeable surfaces reflect less near-infrared radiation than vegetation. In contrast, farmland and green spaces surrounding the city show higher NDVI values.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 5 — Google Earth Engine</span>"
+    ]
+  },
+  {
+    "objectID": "week5.html#reflection",
+    "href": "week5.html#reflection",
+    "title": "6  Week 5 — Google Earth Engine",
+    "section": "6.3 Reflection",
+    "text": "6.3 Reflection\nMy experience using Google Earth Engine highlights how cloud platforms are transforming remote sensing workflows. Traditionally, remote sensing analysis requires downloading large datasets and processing them with specialized software, which is both time-consuming and computationally resource-intensive. In contrast, GEE allows users to access satellite archives and perform analysis directly in the cloud environment, enabling much more efficient processing of large datasets.\nAnother key takeaway this week was the importance of structured workflows in remote sensing analysis. The series of steps—defining the study area, sifting through satellite imagery, generating composite images, and calculating indices—provides a clear and reproducible framework for analyzing Earth observation data. Even relatively simple indices like NDVI, when applied systematically, can reveal meaningful spatial patterns.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 5 — Google Earth Engine</span>"
+    ]
+  },
+  {
+    "objectID": "week6.html",
+    "href": "week6.html",
+    "title": "7  Week 6 — Classification I",
+    "section": "",
+    "text": "7.1 Summary\nSupervised classification depends heavily on a series of human decisions made before the classifier even runs. These include how classes are defined, where training samples are placed, how much within-class variation is captured, and whether different land covers are spectrally distinct enough to separate at all. In that sense, classification is not just about the algorithm; it is also about how the landscape is conceptualised. The workshop made this especially clear when even small changes in training strategy produced noticeably different outputs.\nThe lecture and readings also made the issue of accuracy much more important. A classified map can look convincing, but that does not necessarily mean it is reliable. Classification quality needs to be evaluated using formal measures such as confusion matrices and their derived metrics, rather than visual impression alone. More broadly, remote sensing data quality is shaped by multiple dimensions, and thematic accuracy is only one part of a wider uncertainty problem. Barsi et al. argue that classification accuracy is highly relevant but also highly uncertain, especially because error can accumulate from earlier processing stages and because training data themselves are often assumed to be error-free when they are not (Barsi 2018).\nPal and Mather show that SVM can outperform maximum likelihood and ANN, particularly with small training datasets and high-dimensional data, but they also note that performance depends on classifier design choices and parameter settings (Pal & Mather 2005). The workshop’s comparison between simple CART and Random Forest was not just about trying a different tool, but about thinking more carefully about robustness, generalisation, and how model design interacts with the structure of the training data.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Week 6 — Classification I</span>"
+    ]
+  },
+  {
+    "objectID": "week6.html#workflow",
+    "href": "week6.html#workflow",
+    "title": "7  Week 6 — Classification I",
+    "section": "7.2 Workflow",
+    "text": "7.2 Workflow\n\n\n\nFigure 1. Classification Workflow and Major Output (CART)\n\n\nFirst, a study area was defined using administrative boundary data, and Sentinel-2 imagery was filtered and composited to reduce cloud effects. The image was then clipped to the area of interest, which made subsequent processing more efficient and easier to interpret. Training data were created by manually drawing polygons for different land cover types, and spectral values were sampled from selected bands. This step was particularly important, as the classifier relies entirely on these labelled samples to learn the relationship between spectral signatures and land cover classes. The initial classification was carried out using a CART classifier, which produced a clear separation between water, urban, and vegetation. The result broadly reflects the spatial structure of Shenzhen, with urban areas dominating and vegetation appearing more fragmented. The workflow also included steps such as train-test splitting and Random Forest classification, highlighting that classification is not only about producing a map, but also about evaluating how reliable that map is.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Week 6 — Classification I</span>"
+    ]
+  },
+  {
+    "objectID": "week6.html#interpretation-and-critical-discussion",
+    "href": "week6.html#interpretation-and-critical-discussion",
+    "title": "7  Week 6 — Classification I",
+    "section": "7.3 Interpretation and Critical Discussion",
+    "text": "7.3 Interpretation and Critical Discussion\nA main challenge was deciding how to define land cover classes in a way that is both meaningful and realistically separable. In practice, some categories are not clearly distinguishable based on spectral information alone. For example, urban surfaces, bare soil, and sparse vegetation can appear quite similar, which makes misclassification more likely. Because of this, simplifying the classification scheme to a smaller number of broader classes actually improved the overall stability of the results.\nWhat‘s more, how training and validation data were constructed is also tricky. The initial train-test split based on polygons did not provide a very reliable evaluation, as the number of polygons per class was limited and not fully representative. In contrast, switching to pixel-level random sampling produced a more robust validation approach.  Accuracy is not just a property of the model, but also depends heavily on how the data are sampled and split.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Week 6 — Classification I</span>"
+    ]
+  },
+  {
+    "objectID": "week6.html#reflection",
+    "href": "week6.html#reflection",
+    "title": "7  Week 6 — Classification I",
+    "section": "7.4 Reflection",
+    "text": "7.4 Reflection\nAfter detailed investigation of the workflow, I realised that it depends much more on the choices that were made at the beginning and a whole lot more on the output. In addition, I hadn’t really appreciated how sensitive our outputs are to how training data is constructed. During the workshop, minor differences in how samples were drawn or how classes were grouped resulted in noticeable changes in the classification output. That gave me a greater awareness that the map isn’t merely output from the algorithm but is based on the assumptions built into the training data.\nI have also found that my attitude towards the results has changed to some extent. I used to rely primarily on whether the classification “looked right”. I’m more careful about that now, having seen firsthand how different validation approaches can produce different understandings of accuracy. I realised that a clean-looking map may still be misleading if the evaluation process is not robust. Another thing I found interesting is that simplifying the classification actually made the result more convincing. Rather than trying to capture too much detail, concentrating on a few well-defined classes reduced confusion and made the output easier to interpret. Initially, I never expected this but now it seems like a more practical way to approach classification.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Week 6 — Classification I</span>"
+    ]
+  },
+  {
+    "objectID": "week7.html",
+    "href": "week7.html",
+    "title": "8  Week 7 — Classification II",
+    "section": "",
+    "text": "8.1 Summary\nThis week’s lecture and workshop gave me a considerable understanding of how spatial complexity impacts remote sensing classification. One lecture takeaway was that, for many situations such as heterogeneous environments, the regular assumption (each pixel representing one land cover class) is a pretty unrealistic one to apply. Introducing mixed pixels is a useful framework as we understand pixel-based classification can be difficult in practice to get reliable results.\nExpanding the idea further, the workshop was able to present two different proposals in order to overcome this limitation. As indicated by a sub-pixel analysis, land cover should be considered as a combination of different elements in a pixel rather than a single discrete entity. It opened my mind to “representation of proportions” rather than classification (I found this particularly illuminating when I had to study urban areas that had very fragmented land cover).\nIn comparison, the object-based workflow presented a new solution to the spatial complexity problem by considering the spatial arrangement of pixels. Using segmentation and object-level feature extraction, the method prioritized the contribution of spatial context as opposed to spectral information. This brought to light that classifying was more than a question of spectral separability: how could we adapt the spatial structure so as to inform interpretation?",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Week 7 — Classification II</span>"
+    ]
+  },
+  {
+    "objectID": "week7.html#sub-pixel-analysis-and-mixed-pixel-problem",
+    "href": "week7.html#sub-pixel-analysis-and-mixed-pixel-problem",
+    "title": "8  Week 7 — Classification II",
+    "section": "8.2 Sub-pixel Analysis and Mixed Pixel Problem",
+    "text": "8.2 Sub-pixel Analysis and Mixed Pixel Problem\nThe sub-pixel workflow addressed a fundamental limitation in remote sensing: the presence of mixed pixels. According to Foody (2004), the assumption that each pixel corresponds to a single land cover class is often violated in real-world imagery, especially in heterogeneous urban environments. Mixed pixels may arise due to small sub-pixel features, boundary effects, or gradual transitions between land cover types. Spectral unmixing was employed on Landsat imagery to estimate the proportion of urban, vegetation, and water within each pixel. The resulting fraction maps revealed that many pixels contain a mixture of land cover types rather than a single dominant class.\n\n\n\nFigure 1. Sub-pixel fraction-based classification\n\n\nThe reclassified output shows a highly fragmented spatial pattern, with considerable pixel-level variability. This kind of salt-and-pepper effect reflects the inherent instability of assigning a single class to mixed pixels. Although sub-pixel analysis shows more slight differences about land cover composition, converting these fractions into classes introduces more uncertainty and noise.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Week 7 — Classification II</span>"
+    ]
+  },
+  {
+    "objectID": "week7.html#object-based-image-analysis",
+    "href": "week7.html#object-based-image-analysis",
+    "title": "8  Week 7 — Classification II",
+    "section": "8.3 Object-based Image Analysis",
+    "text": "8.3 Object-based Image Analysis\nTo address the limitations of pixel-based approaches, the second part of the practical implemented an object-based workflow. This began with SNIC segmentation, which groups spectrally similar neighbouring pixels into spatially coherent objects.\n\n\n\nFigure 2. SNIC segmentation result\n\n\nFollowing segmentation, object-level features were extracted, including mean spectral bands and NDVI values. These were then used as inputs for a supervised classification model.\n\n\n\nFigure 3. NDVI result\n\n\nThe object-based classification is more spatially coherent and has a smoother profile than the pixel classification result. The large homogeneous regions are much clearer, the noise seen in the sub-pixel classification is significantly reduced, and hence the graph is clearer. This enhancement is due to the fact that the influence of mixed pixels is mitigated if we combine neighbouring pixels into meaningful spatial units using object-based approaches.\n\n\n\nFigure 4. Object-based classification result",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Week 7 — Classification II</span>"
+    ]
+  },
+  {
+    "objectID": "week7.html#critical-reflection",
+    "href": "week7.html#critical-reflection",
+    "title": "8  Week 7 — Classification II",
+    "section": "8.4 Critical Reflection",
+    "text": "8.4 Critical Reflection\nTo begin with, the segmentation method brings some degree of subjectivity to the classification process. The final classification is extremely dependent on such parameters as size and compactness of an object. In this case, changing these parameters might also greatly alter the spatial structure results—indicating object-based classification is not entirely objective. Second, the approach may cause over-smoothing to occur to such an extent that the fine spatial variation is diminished. This is evident in the large homogeneous regions observed in the classification output, which may mask the more subtle or even transitional land cover features. Third, the classification reliability is highly dependent on the selection of training samples. In this case, the classification performance varied noticeably depending on the quality and representativeness of the manually selected polygons. This illustrates the need for careful training data selection in supervised classification workflows. Finally, visually improved classification results do not necessarily imply higher accuracy. Furthermore, the spatial autocorrelation in remote sensing data can lead to overly optimistic interpretations of model performance if spatial dependencies are not properly accounted for. In this respect, the spatial coherence of the object-based result may partly reflect inherent spatial structure rather than true predictive accuracy.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Week 7 — Classification II</span>"
+    ]
+  },
+  {
+    "objectID": "week8.html",
+    "href": "week8.html",
+    "title": "9  Week 8 — Temperature",
+    "section": "",
+    "text": "9.1 Summary\nThis week I choose to focus on temperature. Trying to understanding urban heat from a remote sensing perspective.\nWith the application of satellite images such as Landsat and MODIS, temperature can be gauged consistently across space - at a point where real-world ground measurements would have a problem. Nevertheless, I also discovered that LST is different from air temperature, and such separation is necessary to analyze the results, especially in relation to human heat exposure. This has given me insight to the advantages and demerits of remote sensing data in urban climate investigation. The workshop also showed that heat distribution in urban areas is highly dependent on surface properties. More impervious terrain, such as roads and buildings, traps heat, while vegetated regions stay cooler. This is in line with prior studies demonstrating the urban heat island effect is primarily attributed to anthropogenic land cover modifications (MacLachlan et al. 2021). At the same time, the readings offered a more cynical view, emphasizing the fact that exposure to heat is unevenly distributed and frequently reflects more systemic socio-economic inequalities. More precisely, places with less tree cover and higher imperviousness are generally linked to elevated temperatures and less environmental protection (Nowak 2022), for instance.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Week 8 — Temperature</span>"
+    ]
+  },
+  {
+    "objectID": "week8.html#workflow",
+    "href": "week8.html#workflow",
+    "title": "9  Week 8 — Temperature",
+    "section": "9.2 Workflow",
+    "text": "9.2 Workflow\n1.Landsat imagery was used to generate a high-resolution land surface temperature (LST) map, while MODIS data were used for analysing temporal variation due to their higher revisit frequency. Pre-processing included filtering by summer months, clipping to the Beijing study area, and applying scale factors to convert raw values into Celsius. This ensured that the temperature outputs were physically meaningful and comparable across datasets. To explore temporal dynamics, a MODIS-based time series was generated (Figure 1). This shows how temperature fluctuates across the summer period, with noticeable variability rather than a stable trend. This step highlights the importance of using high-frequency data when analysing environmental processes that change over time.\n\n\n\nFigure 1.Temperature time series derived from MODIS data, showing temporal variation in land surface temperature across Beijing during summer 2022.\n\n\n2.While MODIS provides strong temporal insight, it lacks spatial detail. To address it, Landsat data were used to produce a higher-resolution temperature map. However, analysing this map directly does not allow for quantitative comparison between areas, so zonal statistics were applied.\nInitially, GAUL level 2 administrative boundaries were used as spatial units, but this resulted in overly coarse aggregation, with only two units representing the entire study area. This made it difficult to interpret spatial variability. To overcome this limitation, a regular grid was introduced as an alternative spatial unit. The study area was divided into thousands of smaller cells, allowing temperature to be analysed at a much finer scale (Figure 2).\n\n\n\nFigure 2. Grid-based aggregation of Landsat-derived temperature, showing spatial variation at a finer resolution across Beijing.\n\n\n3.The temperature values of each grid cell were converted into a heat index using percentile-based classification. Each cell was assigned a value from 1 to 5, representing its relative position within the temperature distribution. This standardisation makes the results easier to interpret and compare across space, transforming raw temperature data into a more meaningful indicator of heat intensity (Figure 3).\n\n\n\nFigure 3. Heat index map based on percentile classification of grid-level temperature, where higher values indicate relatively hotter areas.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Week 8 — Temperature</span>"
+    ]
+  },
+  {
+    "objectID": "week8.html#results-discussion",
+    "href": "week8.html#results-discussion",
+    "title": "9  Week 8 — Temperature",
+    "section": "9.3 Results Discussion",
+    "text": "9.3 Results Discussion\nThe results reveal clear temporal and spatial patterns in land surface temperature across Beijing, highlighting both environmental processes and underlying spatial inequalities.\nFrom a time point perspective, the MODIS time series (Figure 1) indicates that temperature varies quite significantly during the summer months, as opposed to following a uniform or regular pattern. Peak values are generally observed during mid-summer, while short-term troughs are also evident. These variations are likely due to changing weather conditions, including cloud cover and atmospheric variability, which can impact satellite-based temperature data. This highlights the significance of high-frequency datasets such as MODIS when visualizing dynamic environmental processes, as single-date imagery would therefore be insufficient to convey this variability.\nIn contrast, spatial patterns can be captured better by Landsat data. As depicted in the Landsat-generated temperature map (Figure 4), the heat and cold temperature in Beijing are in different local areas, with higher temperatures on the southern side, while the lower temperatures are in the north, presenting a noticeable spatial gradient. This pattern is significantly related to differences in land cover and topography. The southern areas are more urbanised and comprised predominantly of impervious surfaces, which absorb and retain heat, contrasting with the northern areas which are more mountainous and vegetated, allowing for greater cooling through evapotranspiration. This spatial dynamic is in line with what is commonly known as the urban heat island effect, where built-up environments experience higher temperatures than adjacent natural regions.\n\n\n\nFigure 4. Landsat-derived land surface temperature showing spatial variation across Beijing, with higher temperatures in urban areas and lower temperatures in mountainous regions.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Week 8 — Temperature</span>"
+    ]
+  },
+  {
+    "objectID": "week8.html#quick-discuss",
+    "href": "week8.html#quick-discuss",
+    "title": "9  Week 8 — Temperature",
+    "section": "9.4 Quick Discuss",
+    "text": "9.4 Quick Discuss\nCould redlined areas experience higher temperatures?\nFrom a physical perspective, areas designated as red-line zones tend to have higher impermeable surface coverage and lower vegetation cover. The impermeable surface area increases significantly, while tree cover decreases with increasing designation level (Nowak et al., 2022). This leads to reduced evapotranspiration and increased heat retention, resulting in higher surface temperatures. Empirically, this thermal unevenness can be measured using Earth observation data, as historically, red-line zones have had average temperatures approximately 2.6°C higher than other areas, with even greater differences observed in some cities (Wilson 2020). SAR adds another layer to the knowledge. Temperature data indicates where heat is concentrated, but SAR explains why these areas are hotter. By modelling variation in surface roughness, building density, and material properties, SAR provides insight into the structural features resulting from high heat exposure. For instance, dense urban fabrics with little vegetation (a feature of historically disinvested environments) would yield specific SAR backscatter signatures as they are geometrically complex and composed of specific materials. This implies that the relationship between redlining and temperature is by no means accidental — it is mediated by urban form and land cover which can be observed using remote sensing. Decisions of past planning affected investment, infrastructure, and land use, hence the physical landscape that dictates modern temperatures.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Week 8 — Temperature</span>"
+    ]
+  },
+  {
+    "objectID": "week8.html#refelection",
+    "href": "week8.html#refelection",
+    "title": "9  Week 8 — Temperature",
+    "section": "9.5 Refelection",
+    "text": "9.5 Refelection\nAt the start, I was mainly focused on getting the outputs right — making sure the temperature maps looked reasonable and the code ran without errors. But as the workflow progressed, especially when we moved into spatial aggregation, it became clear that the analytical choices behind the map matter just as much as the data itself.\nFor example, using the GAUL level 2 boundaries initially seemed like a straightforward step, but the result was surprisingly uninformative, with only two spatial units representing the whole study area. At first I thought something had gone wrong, but it turned out to be a limitation of the dataset rather than the method. This made me realise that spatial analysis is not just about applying tools, but also about critically evaluating whether the chosen spatial unit is appropriate. Once I switched to a grid-based approach, the results immediately became more meaningful, and the spatial patterns were much easier to interpret. So in a way, this was less of a technical fix and more of a conceptual improvement.\nAt the same time, working with both Landsat and MODIS also highlighted an important trade-off. Landsat gives much better spatial detail, which is great for identifying local patterns, but it lacks temporal continuity. On the other hand, MODIS captures temporal variation very well, but the spatial resolution is quite coarse. Seeing these two datasets side by side helped me better understand why combining multiple data sources is often necessary in remote sensing, rather than relying on a single ‘best’ dataset.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Week 8 — Temperature</span>"
     ]
   }
 ]

@@ -1,9 +1,9 @@
-# Preface {.unnumbered}
+---
+title: "Overview"
+---
 
-This is a Quarto book.
+# Overview
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+This book collects my weekly practical learning diaries for Weeks 1–8 of the module *Remotely Sensing Cities and Environments*.
 
-```{r}
-1 + 1
-```
+Documenting the practical workflow, outputs, interpretations, and reflections developed across the course.

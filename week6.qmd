@@ -1,0 +1,27 @@
+# Week 6 — Classification I
+
+## Summary
+
+Supervised classification depends heavily on a series of human decisions made before the classifier even runs. These include how classes are defined, where training samples are placed, how much within-class variation is captured, and whether different land covers are spectrally distinct enough to separate at all. In that sense, classification is not just about the algorithm; it is also about how the landscape is conceptualised. The workshop made this especially clear when even small changes in training strategy produced noticeably different outputs.
+
+The lecture and readings also made the issue of accuracy much more important. A classified map can look convincing, but that does not necessarily mean it is reliable. Classification quality needs to be evaluated using formal measures such as confusion matrices and their derived metrics, rather than visual impression alone. More broadly, remote sensing data quality is shaped by multiple dimensions, and thematic accuracy is only one part of a wider uncertainty problem. Barsi et al. argue that classification accuracy is highly relevant but also highly uncertain, especially because error can accumulate from earlier processing stages and because training data themselves are often assumed to be error-free when they are not (Barsi 2018).
+
+Pal and Mather show that SVM can outperform maximum likelihood and ANN, particularly with small training datasets and high-dimensional data, but they also note that performance depends on classifier design choices and parameter settings (Pal & Mather 2005). The workshop’s comparison between simple CART and Random Forest was not just about trying a different tool, but about thinking more carefully about robustness, generalisation, and how model design interacts with the structure of the training data.
+
+## Workflow
+
+![Figure 1. Classification Workflow and Major Output (CART)](img/week6%20workflow.png)
+
+First, a study area was defined using administrative boundary data, and Sentinel-2 imagery was filtered and composited to reduce cloud effects. The image was then clipped to the area of interest, which made subsequent processing more efficient and easier to interpret. Training data were created by manually drawing polygons for different land cover types, and spectral values were sampled from selected bands. This step was particularly important, as the classifier relies entirely on these labelled samples to learn the relationship between spectral signatures and land cover classes. The initial classification was carried out using a CART classifier, which produced a clear separation between water, urban, and vegetation. The result broadly reflects the spatial structure of Shenzhen, with urban areas dominating and vegetation appearing more fragmented. The workflow also included steps such as train-test splitting and Random Forest classification, highlighting that classification is not only about producing a map, but also about evaluating how reliable that map is.
+
+## Interpretation and Critical Discussion
+
+A main challenge was deciding how to define land cover classes in a way that is both meaningful and realistically separable. In practice, some categories are not clearly distinguishable based on spectral information alone. For example, urban surfaces, bare soil, and sparse vegetation can appear quite similar, which makes misclassification more likely. Because of this, simplifying the classification scheme to a smaller number of broader classes actually improved the overall stability of the results.
+
+What‘s more, how training and validation data were constructed is also tricky. The initial train-test split based on polygons did not provide a very reliable evaluation, as the number of polygons per class was limited and not fully representative. In contrast, switching to pixel-level random sampling produced a more robust validation approach.  Accuracy is not just a property of the model, but also depends heavily on how the data are sampled and split.
+
+## Reflection
+
+After detailed investigation of the workflow, I realised that it depends much more on the choices that were made at the beginning and a whole lot more on the output. In addition, I hadn’t really appreciated how sensitive our outputs are to how training data is constructed. During the workshop, minor differences in how samples were drawn or how classes were grouped resulted in noticeable changes in the classification output. That gave me a greater awareness that the map isn’t merely output from the algorithm but is based on the assumptions built into the training data.
+
+I have also found that my attitude towards the results has changed to some extent. I used to rely primarily on whether the classification “looked right”. I’m more careful about that now, having seen firsthand how different validation approaches can produce different understandings of accuracy. I realised that a clean-looking map may still be misleading if the evaluation process is not robust. Another thing I found interesting is that simplifying the classification actually made the result more convincing. Rather than trying to capture too much detail, concentrating on a few well-defined classes reduced confusion and made the output easier to interpret. Initially, I never expected this but now it seems like a more practical way to approach classification.
